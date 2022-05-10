@@ -7,7 +7,7 @@ import 'package:anime_facts/utilities/utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-/// Cette classe charge et affiche la liste des animés
+/// This class loads and displays the list of anime
 class AnimeListView extends StatefulWidget {
   const AnimeListView({Key? key}) : super(key: key);
 

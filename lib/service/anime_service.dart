@@ -3,9 +3,10 @@ import 'package:anime_facts/entities/fact.dart';
 import 'package:anime_facts/utilities/utility.dart';
 import 'package:get/get.dart';
 
+///This class is a business class that manages the "Anime" object and its derivatives
 class AnimeService {
-  // final apiUrl = "https://kd-anime-facts.herokuapp.com/api/v1";
 
+  ///load and convert "Anime" from the web service
   Future<List<Anime>> loadAllAnime() async {
     List<Anime> result = [];
 
@@ -23,6 +24,7 @@ class AnimeService {
     }
   }
 
+  /// load and convert the "fact" of the "anime" into a parameter
   Future<List<Fact>> loadFactsByAnime(Anime anime) async {
     List<Fact> result = [];
 

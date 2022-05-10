@@ -1,3 +1,4 @@
+/// This class represents a "Fact" object
 class Fact {
   late int id;
   late String fact;

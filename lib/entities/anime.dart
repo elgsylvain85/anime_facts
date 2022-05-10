@@ -1,3 +1,4 @@
+/// This class represents an "Anime" object
 class Anime {
   late int id;
   late String name;

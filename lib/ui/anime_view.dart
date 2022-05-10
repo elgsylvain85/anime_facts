@@ -3,7 +3,7 @@ import 'package:anime_facts/ui/anime_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-/// Cette classe represente une page d'un animé
+/// This class represents a page from an anime
 class AnimeView extends StatelessWidget {
   final Anime anime;
   final bool loadFacts;

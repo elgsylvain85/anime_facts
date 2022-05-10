@@ -7,13 +7,13 @@ import 'package:anime_facts/ui/anime_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-/// Cette classe represente un composant d'un animé
-/// elle prends l'anime en parametre de son constructeur.
-/// la variable [loadFacts] en parametre du constructeur determine si charger et afficher ou pas les faits liés
+/// This class represents a component of an anime
+/// it takes the anime as a parameter to its constructor.
+/// the variable [loadFacts] in constructor parameter determines whether to load and display the linked facts or not
 class AnimeWidget extends StatefulWidget {
   final Anime anime;
 
-  /// charger et afficher ou pas les faits liés
+  /// load and display or not the linked facts
   final bool loadFacts;
 
   const AnimeWidget(this.anime, this.loadFacts, {Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class _AnimeWidgetState extends State<AnimeWidget> {
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(10)),
         child:
-            /* condition à afficher les faits ou juste la couverture */
+            /* condition to display the facts or just the coverage */
             !widget.loadFacts
                 ? Column(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -55,12 +55,12 @@ class _AnimeWidgetState extends State<AnimeWidget> {
                         fit: BoxFit.cover,
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) {
-                            // null signifie que l'image a été chargée ou a échouée
+                            // null means the image was loaded or failed
                             return child;
                           } else {
                             double? progress;
 
-                            /* calcule la progression si tous les elements sont presents*/
+                            /* calculates the progress if all the elements are present */
                             if (loadingProgress.expectedTotalBytes != null) {
                               progress = loadingProgress.cumulativeBytesLoaded /
                                   loadingProgress.expectedTotalBytes!;
@@ -79,12 +79,12 @@ class _AnimeWidgetState extends State<AnimeWidget> {
                       ),
                       Text(
                         widget.anime.name
-                            .replaceAll("_", " "), //pour eviter le snake_case
+                            .replaceAll("_", " "), //avoid snake_case
                         style: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 32),
                       ),
 
-                      /* condition à afficher le lien "voir les faits" sinon rien */
+                      /* condition to display the "see the facts" link otherwise nothing */
                       !widget.loadFacts
                           ? TextButton(
                               onPressed: () {
@@ -138,8 +138,8 @@ class _AnimeWidgetState extends State<AnimeWidget> {
                                   refreshData();
                                 },
                                 icon: const Icon(Icons.refresh),
-                                label:
-                                    Text("errorDataRefresh".tr.capitalizeFirst!)));
+                                label: Text(
+                                    "errorDataRefresh".tr.capitalizeFirst!)));
                       }
                     })),
       ),
