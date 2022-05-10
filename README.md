@@ -6,7 +6,7 @@
 
 # Getting started
 
-- The project is hosted for free at Firebase:
+- The project is hosted for free at Firebase: https://animefacts.web.app
 
 # Rebuild project :
 
